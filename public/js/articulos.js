@@ -96,15 +96,15 @@ const obtener_articulo = (tipo) => {
                 case 1:
                     document.querySelector('#nombre_articulo').innerHTML = response.data.articulo.nombre;
                     document.querySelector('#precio_actual').innerHTML = `$${response.data.articulo.precio}`;
-                    document.querySelector('#nuevo_nombre').value = 0;
-                    document.querySelector('#nuevo_precio').value = 0;
+                    document.querySelector('#nuevo_nombre').value = response.data.articulo.nombre;;
+                    document.querySelector('#nuevo_precio').value = `${response.data.articulo.precio}`;;
                     $('#edicionArticuloModal').modal('show');
                 break;
             
                 case 2:
                     document.querySelector('#nombre_articulo2').innerHTML = response.data.articulo.nombre;
                     document.querySelector('#cantidad_actual').innerHTML = response.data.articulo.cantidad;
-                    document.querySelector('#nueva_cantidad').value = 0;
+                    document.querySelector('#nueva_cantidad').value = response.data.articulo.cantidad;
                     $('#actualizacionArticuloModal').modal('show');
                 break;
 
