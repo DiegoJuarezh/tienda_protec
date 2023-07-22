@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ArticulosController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('showArticulos',     [ArticulosController::class, 'showArticulos']);
+Route::get('showArticulo/{id}', [ArticulosController::class, 'showArticulo']);
+Route::post('nuevoArticulo',    [ArticulosController::class, 'nuevoArticulo']);
+Route::post('bajaArticulo',     [ArticulosController::class, 'bajaArticulo']);
+
+Route::post('edicionArticulo',      [ArticulosController::class, 'edicionArticulo']);
+Route::post('actualizacionArticulo',[ArticulosController::class, 'actualizacionArticulo']);
